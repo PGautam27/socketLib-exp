@@ -15,9 +15,13 @@ import androidx.compose.ui.Modifier
 import com.example.myapplication.ui.theme.MyApplicationTheme
 
 class MainActivity : ComponentActivity() {
+
+    // Instantiating the webSocketClient
     private lateinit var webSocketClient: WebSocketClient
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // initializing the webSocketClient
         webSocketClient = WebSocketClient()
         setContent {
             MyApplicationTheme{
@@ -32,6 +36,7 @@ class MainActivity : ComponentActivity() {
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
                         Button(onClick = {
+                            // this invokes the connectWebSocket function which establishes the connection
                             webSocketClient.connectWebSocket()
                         }) {
                             Text(text = "CLICK ME")
