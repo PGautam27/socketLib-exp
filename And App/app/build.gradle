@@ -61,24 +61,8 @@ dependencies {
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_ui_version"
     debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_ui_version"
 
-    //Socket.io
-    implementation ('io.socket:socket.io-client:2.0.0'){
-        //noinspection DuplicatePlatformClasses
-        exclude group: 'org.json', module: 'json'
-    }
+    //okhttp3 client for sockets
+    implementation 'com.squareup.okhttp3:okhttp:4.9.1'
 
-    implementation "androidx.navigation:navigation-runtime-ktx:2.4.0"
 
-    def nav_version = "2.5.1"
-    implementation("androidx.navigation:navigation-compose:$nav_version")
-
-    def lifecycle_version = "2.4.0"
-    implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
-
-    //runtime liveDate
-    implementation "androidx.compose.runtime:runtime-livedata:1.2.0"
-
-    // Navigation component
-    implementation "androidx.navigation:navigation-fragment-ktx:2.4.0"
-    implementation "androidx.navigation:navigation-ui-ktx:2.4.0"
 }
